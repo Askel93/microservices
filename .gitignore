@@ -1,0 +1,8 @@
+/apigw/target/
+/.idea/
+/amqp/target/
+/clients/target/
+/customer/target/
+/eureka-server/target/
+/fraud/target/
+/notification/target/
