@@ -1,0 +1,8 @@
+com\askel93\notification\NotificationConfig.class
+com\askel93\notification\NotificationRepository.class
+com\askel93\notification\rabbitmq\NotificationConsumer.class
+com\askel93\notification\NotificationController.class
+com\askel93\notification\Notification.class
+com\askel93\notification\NotificationService.class
+com\askel93\notification\NotificationApplication.class
+com\askel93\notification\Notification$NotificationBuilder.class

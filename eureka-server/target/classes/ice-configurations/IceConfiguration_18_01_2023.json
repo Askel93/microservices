@@ -1,0 +1,2047 @@
+[
+  {
+    "entity": "AppModule",
+    "id": "mse",
+    "version": 1,
+    "displayname": "МСЭ",
+    "description": "МСЭ",
+    "system": null,
+    "subsystem": "mse_common",
+    "repository": null,
+    "branch": null,
+    "datasource_": null
+  },
+  {
+    "entity": "AppObjectGroup",
+    "id": "mse.ipra",
+    "version": 1,
+    "displayname": "ИПРА",
+    "description": null,
+    "system": null,
+    "schema": "rpu_ipra",
+    "repository": null,
+    "branch": null,
+    "parent": null,
+    "datasource_": null,
+    "module": {
+      "entity": "AppModule",
+      "id": "mse",
+      "isBackRef": true
+    }
+  },
+  {
+    "entity": "AppObject",
+    "id": "mse.eventPerformer",
+    "version": 6,
+    "displayname": "Исполнитель мероприятия",
+    "description": "Исполнитель мероприятия",
+    "noinheritance": null,
+    "readonly": null,
+    "abstract": null,
+    "system": null,
+    "hideinmenu": null,
+    "temporal": null,
+    "type": "DICT",
+    "statemachinetype": null,
+    "descriptor": {
+      "entity": "DictDescriptor",
+      "id": "@ice-bfd84cb5-62e6-4fe0-b69d-bdd372d6df81",
+      "rules": [],
+      "actions": [],
+      "objects": [],
+      "editForm": {
+        "entity": "EditFormDescriptor",
+        "id": "@ice-b382fd0e-06b8-4868-881d-e91cb969281e",
+        "components": []
+      },
+      "listForm": {
+        "entity": "ListFormDescriptor",
+        "id": "@ice-f45956bf-ad0c-43b0-8be9-da1d19c0b9fb",
+        "filters": [],
+        "cellStyles": [],
+        "dataColumns": [],
+        "deleteCascadeEnable": false
+      },
+      "dataModel": {
+        "entity": "DataModelDescriptor",
+        "id": "@ice-f8d5eab5-6501-47b0-9ad1-1326d747b9a5",
+        "isView": false,
+        "counter": 13,
+        "triggers": [],
+        "tableName": "eventPerformer",
+        "dataFields": [
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-bd1e21a2-eb04-4fcb-a192-6ec40f9995ff",
+            "name": "performer",
+            "static": true,
+            "fieldId": 12,
+            "tooltip": "Исполнитель мероприятия",
+            "children": [],
+            "dataType": "REFERENCE",
+            "fetchMode": "NORMAL",
+            "description": "Исполнитель мероприятия",
+            "displayName": "[АГГ]Исполнитель мероприятия",
+            "refAppObject": {
+              "entity": "AppObject",
+              "id": "mse.performer",
+              "displayName": "Исполнитель"
+            },
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-15bab476-8d05-4392-bac1-c244099ad20f"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-17ae6ffb-7d78-4912-aaa0-f35532be5786",
+            "name": "name",
+            "static": true,
+            "fieldId": 13,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "Название",
+            "displayName": "Название"
+          }
+        ],
+        "displayName": {
+          "entity": "DisplayNameDescriptor",
+          "id": "@ice-a6b6391e-75b3-4a84-afa1-a560216def86",
+          "displayFields": "name"
+        },
+        "validationRules": [],
+        "greenplumReplicatedOption": true
+      },
+      "editForms": [],
+      "reportTemplates": [],
+      "signedDataSetting": []
+    },
+    "parent": null,
+    "statemachine": null,
+    "module": {
+      "entity": "AppModule",
+      "id": "mse",
+      "isBackRef": true
+    },
+    "group": {
+      "entity": "AppObjectGroup",
+      "id": "mse.ipra",
+      "isBackRef": true
+    }
+  },
+  {
+    "entity": "AppObject",
+    "id": "mse.ipr",
+    "version": 169,
+    "displayname": "ИПРА",
+    "description": "ИПРА",
+    "noinheritance": null,
+    "readonly": null,
+    "abstract": null,
+    "system": null,
+    "hideinmenu": null,
+    "temporal": null,
+    "type": "DICT",
+    "statemachinetype": null,
+    "descriptor": {
+      "entity": "DictDescriptor",
+      "id": "@ice-de0b6aff-4060-4c36-bee7-4f3daa5f43e0",
+      "rules": [],
+      "actions": [],
+      "objects": [],
+      "editForm": {
+        "entity": "EditFormDescriptor",
+        "id": "@ice-8176338d-a550-488d-8a65-f0092f494005",
+        "components": []
+      },
+      "listForm": {
+        "entity": "ListFormDescriptor",
+        "id": "@ice-033d867d-c747-4d6a-899a-922412f660c1",
+        "filters": [],
+        "cellStyles": [],
+        "dataColumns": [],
+        "deleteCascadeEnable": false
+      },
+      "dataModel": {
+        "entity": "DataModelDescriptor",
+        "id": "@ice-4fba942f-73d8-4347-95e8-64dce91a2d86",
+        "isView": false,
+        "counter": 104,
+        "triggers": [],
+        "tableName": "ipr",
+        "dataFields": [
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-55e7be25-b376-4f1b-8603-eb6820994a78",
+            "name": "examinationId",
+            "static": true,
+            "fieldId": 12,
+            "children": [],
+            "dataType": "INT",
+            "required": true,
+            "fetchMode": "NORMAL",
+            "description": "ИД освидетельствования",
+            "displayName": "[МСЭ] ID освидетельствования",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-ba3c467d-7c13-45d9-9961-ba1d81cf031f"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-53c0eacc-953d-4a32-b54a-b3d75801f5a8",
+            "name": "dictPotentialId",
+            "static": true,
+            "fieldId": 13,
+            "tooltip": "Потенциал",
+            "children": [],
+            "dataType": "LONG",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ]Потенциал",
+            "displayName": "[НСИ] ID Потенциал",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-e1524cd1-b277-42a8-9048-492dce46813c"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-b799d8dd-1abb-4fcf-88d6-907ee7141a5f",
+            "name": "dictPrognosisId",
+            "static": true,
+            "fieldId": 14,
+            "tooltip": "[МСЭ] Прогноз",
+            "children": [],
+            "dataType": "LONG",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ] Прогноз",
+            "displayName": "[НСИ] ID Прогноз",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-10247ad1-48c2-4893-b6f9-60716006f38a"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-0ee27efe-2124-499d-a596-0d98be0bfc9b",
+            "name": "iprNumber",
+            "static": true,
+            "fieldId": 15,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "displayName": "Номер ИПРА"
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-0eaa53e9-e7a1-414c-a069-7013f276eb16",
+            "name": "forChild",
+            "static": true,
+            "fieldId": 16,
+            "children": [],
+            "dataType": "BOOLEAN",
+            "required": true,
+            "fetchMode": "NORMAL",
+            "description": "ИПРА ребенка",
+            "displayName": "ИПРА ребенка",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-5cdd284b-f636-451d-b7f8-30b36c9ee85b"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-65cf376a-e5b4-4506-bf0c-ba4c852db274",
+            "name": "createDate",
+            "static": true,
+            "fieldId": 17,
+            "children": [],
+            "dataType": "TIMESTAMP",
+            "required": true,
+            "fetchMode": "NORMAL",
+            "description": "Дата создания ИПРА",
+            "displayName": "Дата создания ИПРА",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-ae247028-0c68-45a0-b34f-120ff48edcc2"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-f56bbd59-92b3-4d08-a5c7-c5bbe54bad7d",
+            "name": "second",
+            "static": true,
+            "fieldId": 18,
+            "children": [],
+            "dataType": "BOOLEAN",
+            "fetchMode": "NORMAL",
+            "description": "Повторная ИПРА",
+            "displayName": "Повторная ИПРА",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-13df1ba0-ab5f-4f69-b68c-b750e8e7b04d"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-2d0f81ed-cc01-4fff-aec6-720d70cc1cd7",
+            "name": "employmentServiceInfoDate",
+            "static": true,
+            "fieldId": 19,
+            "children": [],
+            "dataType": "DATE",
+            "fetchMode": "NORMAL",
+            "description": "Дата информирования гражданина о возможности трудоустройства",
+            "displayName": "Дата информирования гражданина о возможности трудоустройства",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-148b97e1-9342-471e-8050-4156c3969cc5"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-03f6263a-0a5d-4d7d-95fb-9ef02437eaf3",
+            "name": "canBuyCar",
+            "static": true,
+            "fieldId": 20,
+            "children": [],
+            "dataType": "BOOLEAN",
+            "fetchMode": "NORMAL",
+            "description": "Мед показания к приобретению ТС",
+            "displayName": "Мед показания к приобретению ТС",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-255b147a-6388-42a5-b3f2-1ad84ccb55dc"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-fb82fc38-ad58-40ab-b5e5-be93aca9b58e",
+            "name": "needBeAccompaniedTcp",
+            "static": true,
+            "fieldId": 21,
+            "children": [],
+            "dataType": "BOOLEAN",
+            "fetchMode": "NORMAL",
+            "description": "Нуждаемость в сопров к месту получения ТСР",
+            "displayName": "Нуждаемость в сопров к месту получения ТСР",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-7d7f9af0-d7a9-4195-aa2d-75b3edb09d49"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-dab3986d-394a-4223-bffb-dcd993f994f9",
+            "name": "aggreeApplyEmploymentService",
+            "static": true,
+            "fieldId": 22,
+            "children": [],
+            "dataType": "BOOLEAN",
+            "fetchMode": "NORMAL",
+            "description": "Согласие на обращение службы занятости",
+            "displayName": "Согласие на обращение службы занятости",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-cd670193-0cda-4771-bd7b-225927a6e019"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-84cdc67a-f0fe-4bdc-8480-06885e385163",
+            "name": "dictSelfCareCode",
+            "static": true,
+            "fieldId": 23,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "Код Самоосблуживания и самостоят образ жизни",
+            "displayName": "Код самоосблуживания и самостоят образ жизни",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-59728834-dbde-4ada-8f66-35f5bbc2b425"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-7cfc8847-0718-4d92-80dd-acd69b82f604",
+            "name": "workplaceEquipments",
+            "static": true,
+            "fieldId": 24,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-d6a22421-4ede-42ca-ae24-c430ca103a28",
+                "name": "dictWorkplaceEquipmentTypeId",
+                "static": true,
+                "fieldId": 25,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ]Тип рекомендации по оснащению рабочего места",
+                "displayName": "[МСЭ] ID Тип рекомендации по оснащению рабочего места",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-6b95cdba-7898-4c20-8e39-cc616da4ade5"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-68de7f50-8ca7-4556-8298-1f2ff095d53a",
+                "name": "description",
+                "static": true,
+                "fieldId": 26,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "displayName": "Описание рекомендации"
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "workplaceEquipment",
+            "description": "Рекомендации по оснащению раб места",
+            "displayName": "Рекомендации по оснащению раб места",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-13baac1e-2a40-4233-87b4-279668994f6f"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-56685d69-2c98-40ae-9702-6bb6e671b5eb",
+            "name": "translationInfo",
+            "static": true,
+            "fieldId": 27,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-d4463698-d341-4e9a-8f0f-bdf2cee9a6b2",
+                "name": "countOfHours",
+                "static": true,
+                "fieldId": 28,
+                "tooltip": "Количество часов тифло сурдо перевода",
+                "children": [],
+                "dataType": "INT",
+                "fetchMode": "NORMAL",
+                "description": "Количество часов тифло сурдо перевода",
+                "displayName": "Количество часов тифло сурдо перевода",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-b222ea8f-64af-4ee9-852f-09959a0fb9b7"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-9f12c4b8-01c5-411b-a4da-15b416b92251",
+                "name": "dictTranslateTypeId",
+                "static": true,
+                "fieldId": 29,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "displayName": "[МСЭ] ID Тип тифло сурдо перевода",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-986654d5-0b9a-4c21-9c12-04e33e10b7a9"
+                }
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "translationInfo",
+            "displayName": "Тифло сурдо перевод",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-406ee077-0189-4859-85ae-64dbb0e2414c"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-cde658ed-da8f-4981-8c28-d1060df2a2ae",
+            "name": "eploymentAdvices",
+            "static": true,
+            "fieldId": 30,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-235cf57e-af17-444f-b1fb-a3f1c86e1eed",
+                "name": "dictEploymentAdviceTypeId",
+                "static": true,
+                "fieldId": 31,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ] ID Рекомендация по трудовой деятельности",
+                "displayName": "[МСЭ] ID Рекомендация по трудовой деятельности",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-780c5cff-ab69-46ba-bced-60262732c339"
+                }
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "eploymentAdvices",
+            "description": "Рекомендации по трудовой деятельности ",
+            "displayName": "Рекомендации по трудовой деятельности",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-61be4bbf-ee99-4892-bb81-769fc2a927ff"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-e2ad81cb-62db-4239-bcf1-b22606a6c6e0",
+            "name": "predictedResult",
+            "static": true,
+            "fieldId": 32,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-3935912c-c668-4a16-bb3a-3633fc2e71e7",
+                "name": "dictAbilityTypeId",
+                "static": true,
+                "fieldId": 33,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] ID Вид способности",
+                "displayName": "[НСИ] ID Вид способности",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-63231f2f-69ed-40ae-b9cc-3a5c767ae4da"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-2b33d88b-a35c-4ff8-a37c-dddc2407d54e",
+                "name": "dictDegreeOfRecoveryId",
+                "static": true,
+                "fieldId": 34,
+                "tooltip": "Степень восстановления",
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] ID Степень восстановления",
+                "displayName": "[НСИ] ID Степень восстановления",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-9f510a7c-fffc-47ea-9167-95511a1b3bb1"
+                }
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "predictedResult",
+            "description": "Прогнозируемый результат",
+            "displayName": "Прогнозируемый результат",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-325d0103-0ec1-4d83-957b-b0107638a828"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-0656d5f2-510f-46e0-819a-f099324bb223",
+            "name": "rehabActivities",
+            "static": true,
+            "fieldId": 35,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-777ad134-3dd1-4695-b57b-03a7b7f91f3a",
+                "name": "dictEventIpraSubtypeId",
+                "static": true,
+                "fieldId": 36,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ]Подтип мероприятия",
+                "displayName": "[МСЭ] ID Подтип мероприятия",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-9aad776b-5750-43f1-b43e-5046bdcf7082"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-4b8f6250-ff9a-4d17-aed8-77f6ab6ab60e",
+                "name": "dictExecutorId",
+                "static": true,
+                "fieldId": 37,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ] Исполнитель мероприятия ИПРА",
+                "displayName": "[МСЭ] Исполнитель мероприятия ИПРА",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-aff81d45-4a02-492a-9db5-3d9e3f1c6ea7"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-46527507-0f50-461b-a72b-44aa8804bb9f",
+                "name": "dateFrom",
+                "static": true,
+                "fieldId": 38,
+                "tooltip": "дата с",
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "description": "дата с",
+                "displayName": "дата с",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-cba0b2ef-1e56-45b8-8c36-2100c29073f7"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-a97708b4-5db4-43c5-8ef2-6121e40ec621",
+                "name": "dateTo",
+                "static": true,
+                "fieldId": 39,
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "description": "Дата по",
+                "displayName": "Дата по",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-9c78879f-0f28-4b5a-996a-526a8b1a5fd7"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-d6e823d5-7cff-4daf-8329-6cde7b8cfbe6",
+                "name": "perpetual",
+                "static": true,
+                "fieldId": 40,
+                "tooltip": "Бессрочно",
+                "children": [],
+                "dataType": "BOOLEAN",
+                "fetchMode": "NORMAL",
+                "description": "Бессрочно",
+                "displayName": "Бессрочно",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-169a1b19-4e26-420d-958c-145299128967"
+                }
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "rehabActivity",
+            "description": "Мероприятия ИПРА",
+            "displayName": "Мероприятия ИПРА",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-dab8df83-1f91-4b10-8b4e-a9033bef3e53"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-9e5bad9f-c44a-4c76-afa0-71a9ba3671d5",
+            "name": "tsrRehabEvents",
+            "static": true,
+            "fieldId": 41,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-f901b145-32e9-450b-9e00-8a69485f6e83",
+                "name": "dictTcpTypeCode",
+                "static": true,
+                "fieldId": 42,
+                "tooltip": "[НСИ] Code Справочник ТСР",
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ] Code Справочник ТСР",
+                "displayName": "[МСЭ] Code Справочник ТСР",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-8eb3f651-d1a5-4189-9e23-ff4e74a98081"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-a91e1333-7f70-4439-a4da-2b860deb598d",
+                "name": "dictTcpNonfederalBudgetTypeCode",
+                "static": true,
+                "fieldId": 60,
+                "tooltip": "[НСИ] Code Справочник. ТСР и услуги за счет нефедерального бюджета",
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ] Code Справочник. ТСР и услуги за счет нефедерального бюджета",
+                "displayName": "[МСЭ] Code Справочник. ТСР и услуги за счет нефедерального бюджета",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-a9ed277e-bea0-448f-b4a2-229a0fa74905"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-626e2ebb-8eb0-4312-bce9-f0880c32560e",
+                "name": "dictSupportBudgetCode",
+                "static": true,
+                "fieldId": 49,
+                "tooltip": "[НСИ] Code Бюджет обеспечения",
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[МСЭ] Code Бюджет обеспечения",
+                "displayName": "[МСЭ] Code Бюджет обеспечения",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-f0edd32e-d1bf-49a8-84a0-2b8a8ab3448d"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-f48521dc-17c4-4465-be77-66f1b5306d13",
+                "name": "firstIssue",
+                "static": true,
+                "fieldId": 61,
+                "children": [],
+                "dataType": "BOOLEAN",
+                "fetchMode": "NORMAL",
+                "description": "Выдано впервые",
+                "displayName": "Выдано впервые",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-c439e91e-d2ee-46c2-911d-18da969362b6"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-76fec82c-13e2-4b9c-98fa-ec8ad9aa8092",
+                "name": "itemCount",
+                "static": true,
+                "fieldId": 47,
+                "children": [],
+                "dataType": "INT",
+                "fetchMode": "NORMAL",
+                "displayName": "Количество",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-4650e990-aaa9-4b32-b95a-b96194b7c5b2"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-a54b2538-56dc-4ed9-aede-dc7fca834834",
+                "name": "dictMeasureUnitCode",
+                "static": true,
+                "fieldId": 48,
+                "tooltip": "[НСИ] Code Справочник единицы измерения",
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] Code Справочник единицы измерения",
+                "displayName": "[НСИ] Code Справочник единицы измерения",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-2b8da0aa-4283-4e83-a66c-da649c65aa84"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-f8b3bb11-d814-4259-b215-a56021995a56",
+                "name": "startDate",
+                "static": true,
+                "fieldId": 44,
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "displayName": "Дата начала мероприятия",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-e237e422-7f45-4b86-911d-b457987f41ec"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-8d8ff62b-33ce-4076-a8f2-cf67165ed4db",
+                "name": "endDate",
+                "static": true,
+                "fieldId": 45,
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "displayName": "Дата окончания мероприятия",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-13075af2-8c39-4698-b434-5c9879c9e439"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-e97a6374-81e2-4226-ade2-ad346fcdbd8a",
+                "name": "permanently",
+                "static": true,
+                "fieldId": 46,
+                "children": [],
+                "dataType": "BOOLEAN",
+                "fetchMode": "NORMAL",
+                "displayName": "Признак окончания мероприятия - бессрочно",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-aeec1588-819f-4b11-9d3b-579d86877e63"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-aa199452-cbe4-475a-98c8-da47e624cf02",
+                "name": "organizationMseCode",
+                "static": true,
+                "fieldId": 52,
+                "tooltip": "Организация МСЭ исполнитель",
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "Организация МСЭ исполнитель",
+                "displayName": "Организация МСЭ исполнитель",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-15c4570c-68c9-441e-8607-11dd611091e2"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-e0989116-e90a-4df0-96a3-a98151260c1d",
+                "name": "firstIpraNumber",
+                "static": true,
+                "fieldId": 51,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "displayName": "Номер первой ИПРА",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-e9109bc1-8933-4b23-bdef-cc2f23c7b86f",
+                  "maxLength": 1024
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-551a8296-e45c-4a53-8beb-1ad5118abe0a",
+                "name": "comment",
+                "static": true,
+                "fieldId": 50,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "displayName": "Комментарий",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-ec40b8e1-9ebd-4dd7-99d6-718d8de179ea",
+                  "maxLength": 1024
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-72760259-d031-4f6c-8fb9-b2d676089b9b",
+                "name": "additionalElements",
+                "static": true,
+                "fieldId": 53,
+                "children": [
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-6579e33d-4c9b-4132-8800-1252ff827a8a",
+                    "name": "width",
+                    "static": true,
+                    "fieldId": 63,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Харакеристика кресла-коляски (стула): ширина, см",
+                    "displayName": "Харакеристика кресла-коляски (стула): ширина, см",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-c7c68464-ea45-486f-9e2a-d258068e634a"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-eeb792bf-ccd1-452e-bb15-2b75a4d911d9",
+                    "name": "depth",
+                    "static": true,
+                    "fieldId": 64,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Характеристика кресла-коляски (стула): глубина, см",
+                    "displayName": "Характеристика кресла-коляски (стула): глубина, см",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-616de858-23e3-42fb-bb29-d5bba6b3189a"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-a7896122-0f49-4fb5-96b1-98dbfc5c9be7",
+                    "name": "seatHeight",
+                    "static": true,
+                    "fieldId": 65,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Характеристика кресла-коляски (стула): высота сиденья, см ",
+                    "displayName": "Характеристика кресла-коляски (стула): высота сиденья, см",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-ec0597f9-f140-4410-a8e5-a27114194068"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-d7434f85-78d3-403b-9c0b-6263831859fe",
+                    "name": "backrestHeight",
+                    "static": true,
+                    "fieldId": 66,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Характеристика кресла-коляски: высота спинки, см",
+                    "displayName": "Характеристика кресла-коляски: высота спинки, см",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-c06662a4-3f30-4de1-882a-0709ab840c4f"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-44168699-e561-4c98-a969-a5b573a0a9ac",
+                    "name": "armrestHeight",
+                    "static": true,
+                    "fieldId": 67,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Характеристика кресла-коляски: высота подклокотника, см ",
+                    "displayName": "Характеристика кресла-коляски: высота подклокотника, см",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-89938e52-001f-43eb-aa65-60d17a0ec73a"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-c9306862-5a0e-4f76-b27c-e0a0d6635d70",
+                    "name": "footBoardHeight",
+                    "static": true,
+                    "fieldId": 68,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Характеристика кресла-коляски: высота подножки, см",
+                    "displayName": "Характеристика кресла-коляски: высота подножки, см",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-f09ffe08-a249-457e-8804-da0cf38fd82a"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-2e59a78a-553d-4edf-bf3e-8f324204c791",
+                    "name": "hasBattery",
+                    "static": true,
+                    "fieldId": 69,
+                    "children": [],
+                    "dataType": "BOOLEAN",
+                    "fetchMode": "NORMAL",
+                    "description": "Характеристика кресла-коляски (7-04): наличие аккумулятора",
+                    "displayName": "Характеристика кресла-коляски (7-04): наличие аккумулятора",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-6345b5c2-0080-495b-bc38-90b46a5b38f0"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-fb80dfe7-b8a1-4694-8e6b-38d21b1f4d37",
+                    "name": "footBoardTypeCode",
+                    "static": true,
+                    "fieldId": 70,
+                    "tooltip": "[НСИ] Code Справочник видов подножки кресла-коляски",
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Code Справочник видов подножки кресла-коляски",
+                    "displayName": "[НСИ] Code Справочник видов подножки кресла-коляски"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-febbd9aa-fc9f-4e02-ad34-f256b0990cf8",
+                    "name": "armrestTypeCode",
+                    "static": true,
+                    "fieldId": 71,
+                    "tooltip": "[НСИ] Code Справочник видов подлокотника кресла-коляски",
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Code Справочник видов подлокотника кресла-коляски",
+                    "displayName": "[НСИ] Code Справочник видов подлокотника кресла-коляски"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-a18bb59f-f800-4bed-bee6-d1950749ac88",
+                    "name": "backrestTypeCode",
+                    "static": true,
+                    "fieldId": 72,
+                    "tooltip": "[НСИ] Code Справочник видов спинки кресла-коляски",
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Code Справочник видов спинки кресла-коляски",
+                    "displayName": "[НСИ] Code Справочник видов спинки кресла-коляски"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-73dc38b5-dcd9-4337-8c06-8773a324d0f6",
+                    "name": "inclinationTypeCode",
+                    "static": true,
+                    "fieldId": 73,
+                    "tooltip": "[НСИ] Code Справочник положения наклона опоры",
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Code Справочник положения наклона опоры",
+                    "displayName": "[НСИ] Code Справочник положения наклона опоры"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-12886f80-60bf-4c24-bc87-c02a5c6a07a6",
+                    "name": "chairSeatTypeCode",
+                    "static": true,
+                    "fieldId": 74,
+                    "tooltip": "[НСИ] Code Справочник видов сиденья кресла-коляски",
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Code Справочник видов сиденья кресла-коляски",
+                    "displayName": "[НСИ] Code Справочник видов сиденья кресла-коляски"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-e53243c5-950a-4422-b351-7cdec94a63a4",
+                    "name": "driveTypeCode",
+                    "static": true,
+                    "fieldId": 75,
+                    "tooltip": "[НСИ] Code Справочник типов электропривода",
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Code Справочник типов электропривода",
+                    "displayName": "[НСИ] Code Справочник типов электропривода"
+                  }
+                ],
+                "dataType": "LIST",
+                "fetchMode": "NORMAL",
+                "tableName": "additionalElements",
+                "description": "Дополнительные приспособления",
+                "displayName": "Дополнительные приспособления",
+                "ownerOfList": "rehabEvents",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-f5c19a0d-487f-4860-9fe9-cf8dc577e9c5"
+                }
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "rehabEvents",
+            "displayName": "ТСР Мероприятия реабилитации",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-08882fc4-1b04-497a-93bc-fb1f8dfd63de"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-57005470-9d46-4290-8f79-ab49e781b4fa",
+            "name": "assistance",
+            "static": true,
+            "fieldId": 55,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-88662a7b-5fa8-451e-b8ba-395fb7beedd4",
+                "name": "dictAssistanceTypeCode",
+                "static": true,
+                "fieldId": 56,
+                "children": [],
+                "dataType": "STRING",
+                "required": true,
+                "fetchMode": "NORMAL",
+                "displayName": "Code Виды помощи"
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "assistance",
+            "displayName": "Виды помощи",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-80769293-470e-444a-a5d3-1333827e99a3"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-cb59b6a3-55fe-43cb-bd3c-7fdf72353072",
+            "name": "recommendationForAccommodationEquipment",
+            "static": true,
+            "fieldId": 57,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-41aedf39-a164-46d9-96d5-08b4f0260400",
+                "name": "dictRecommendationForAccommodationEquipmentCode",
+                "static": true,
+                "fieldId": 58,
+                "children": [],
+                "dataType": "STRING",
+                "required": true,
+                "fetchMode": "NORMAL",
+                "displayName": "Code Рекомендация по оборудованию жилого помещения"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-f7665735-a239-44e3-9408-ccdbecc38a46",
+                "name": "dictTrueFalseValueCode",
+                "static": true,
+                "fieldId": 59,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "displayName": "Code нуждаемости"
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "recommendationForAccommodationEquipment",
+            "description": "Рекомендации по оборудованию жилого помещения",
+            "displayName": "Рекомендации по оборудованию жилого помещения",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-66fc4965-e178-4dd2-8f80-f5d00d0c1fe6"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-80a66943-584d-4e38-a039-1f7d01f8f11c",
+            "name": "rehabService",
+            "static": true,
+            "fieldId": 76,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-4fd0b479-843b-4837-8ed9-561757256227",
+                "name": "startDate",
+                "static": true,
+                "fieldId": 77,
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "displayName": "Дата начала оказания услуги",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-6a7d9795-90ad-4ba2-8cc2-6630c7962ff0"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-728dcc63-0680-4609-b10a-11146fb42a2e",
+                "name": "endDate",
+                "static": true,
+                "fieldId": 78,
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "displayName": "Дата окончания оказания услуги",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-6d52a145-bfae-457e-b8ca-653de115bf71"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-f763b722-cf94-4cb8-af43-59e59c8b9853",
+                "name": "permanently",
+                "static": true,
+                "fieldId": 79,
+                "children": [],
+                "dataType": "BOOLEAN",
+                "fetchMode": "NORMAL",
+                "displayName": "Признак окончания оказания услуги - бессрочно",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-d4077458-16e3-462f-b7a7-b38626197454"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-fdcfd84e-f88e-49a2-b6d6-f7a0a7480eec",
+                "name": "dicExecutorId",
+                "static": true,
+                "fieldId": 80,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] Исполнитель услуги ИПРА",
+                "displayName": "[НСИ] Исполнитель услуги ИПРА",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-6d66f234-4879-4534-87b4-60f159b5a5d7"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-658aee85-1d7f-4110-adb7-dbce5b4c7e83",
+                "name": "classifierTCPCode",
+                "static": true,
+                "fieldId": 81,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] Code Справочник ТСР",
+                "displayName": "[НСИ] Code Справочник ТСР"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-b43f6973-dcf9-42fa-b0fd-c6dea9ceea4c",
+                "name": "dicHourTransferCode",
+                "static": true,
+                "fieldId": 82,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] Code Количество часов тифло сурдо перевода",
+                "displayName": "[НСИ] Code Количество часов тифло сурдо перевода"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-a5a39f4e-cab0-4de1-bd21-fb169e27e0ea",
+                "name": "dictTranslateTypeCode",
+                "static": true,
+                "fieldId": 104,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] Code Тип тифло сурдо перевода",
+                "displayName": "[НСИ] Code Тип тифло сурдо перевода"
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "rehabServices",
+            "displayName": "Услуги по реабилитации",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-51436352-7a06-4df7-8bc7-69f647f0c6e1"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-fa4419ae-c156-4a53-a97f-9e0d33a61189",
+            "name": "ipraExecutions",
+            "static": true,
+            "fieldId": 84,
+            "children": [
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-ac4fff43-8c3c-4eb5-93ec-def6c9c27015",
+                "name": "idDocMse",
+                "static": true,
+                "fieldId": 85,
+                "children": [],
+                "dataType": "LONG",
+                "fetchMode": "NORMAL",
+                "description": "ID документ МСЭ",
+                "displayName": "ID документ МСЭ",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-8a5d9348-156f-4d57-a335-fbb7311ce826"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-705dc281-1d75-4b94-ac64-cc2df15c32ca",
+                "name": "organizationName",
+                "static": true,
+                "fieldId": 86,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "Наименование приславшей организации",
+                "displayName": "Наименование приславшей организации"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-9b13887d-d98c-47f3-8ed3-52cea2d54eba",
+                "name": "ogrn",
+                "static": true,
+                "fieldId": 87,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "ОГРН приславшей организации",
+                "displayName": "ОГРН приславшей организации"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-5722212f-3888-4ff1-afcb-c4a27c7dc26f",
+                "name": "dictOrganizationMSECode",
+                "static": true,
+                "fieldId": 88,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "[НСИ] Организация исполнитель МСЭ",
+                "displayName": "[НСИ] Организация исполнитель МСЭ",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-64f8ce69-d305-49da-8ae2-eb505ad73675"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-d0342fb4-58d2-43db-a394-ded9465de2e6",
+                "name": "iprExecNumber",
+                "static": true,
+                "fieldId": 89,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "Номер ИПРА",
+                "displayName": "Номер ИПРА"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-62c2f270-0b43-4418-b515-0930ff85635e",
+                "name": "protocolNumber",
+                "static": true,
+                "fieldId": 90,
+                "children": [],
+                "dataType": "STRING",
+                "fetchMode": "NORMAL",
+                "description": "Номер протокола МСЭ",
+                "displayName": "Номер протокола МСЭ"
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-344f0e3e-4eee-4f7e-a315-6c9f0abe9326",
+                "name": "protocolDate",
+                "static": true,
+                "fieldId": 91,
+                "children": [],
+                "dataType": "DATE",
+                "fetchMode": "NORMAL",
+                "description": "Дата протокола МСЭ",
+                "displayName": "Дата протокола МСЭ",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-d161937b-5dbf-48d0-afe7-7fbad0074554"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-2da7cc6f-7dd9-42e9-bcba-f8ff2d732671",
+                "name": "rehabEventExecIPRA",
+                "static": true,
+                "fieldId": 92,
+                "children": [
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-815bdbb8-d078-45b6-91fc-2ceb9c43d25d",
+                    "name": "dictRehabEventExecCode",
+                    "static": true,
+                    "fieldId": 93,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Исполнение мероприятия реабилитации",
+                    "displayName": "[НСИ] Исполнение мероприятия реабилитации"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-bf534d41-7c5f-422c-8aa7-44a85195817c",
+                    "name": "name",
+                    "static": true,
+                    "fieldId": 94,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "Наименование",
+                    "displayName": "Наименование"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-dbd42eed-3063-4791-89a8-8cfb51e3861d",
+                    "name": "executor",
+                    "static": true,
+                    "fieldId": 95,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "Исполнитель",
+                    "displayName": "Исполнитель"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-199be717-c865-48dc-be93-6fbce3ab4854",
+                    "name": "execDate",
+                    "static": true,
+                    "fieldId": 96,
+                    "children": [],
+                    "dataType": "DATE",
+                    "fetchMode": "NORMAL",
+                    "description": "Дата исполнения",
+                    "displayName": "Дата исполнения",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-d5e89bf8-ee4b-486d-be00-7a93320d8b9f"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-14332dde-6c50-4876-9cb4-76e7d1cb305f",
+                    "name": "isResult",
+                    "static": true,
+                    "fieldId": 97,
+                    "children": [],
+                    "dataType": "BOOLEAN",
+                    "fetchMode": "NORMAL",
+                    "description": "Результат выполнения",
+                    "displayName": "Результат выполнения",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-05dce73e-3749-4b72-a0b0-88e31c9e0d72"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-c0ee2284-a818-47ce-83d1-b6fb883a8b0b",
+                    "name": "nonExecReason",
+                    "static": true,
+                    "fieldId": 98,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "Причина неисполнения",
+                    "displayName": "Причина неисполнения"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-07d8df12-8818-483f-af20-c922be361486",
+                    "name": "guid",
+                    "static": true,
+                    "fieldId": 99,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "Исполнение мероприятий",
+                    "displayName": "Исполнение мероприятий"
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-5a31b85c-7330-4822-8db5-519348e7d9b2",
+                    "name": "execRate",
+                    "static": true,
+                    "fieldId": 100,
+                    "children": [],
+                    "dataType": "INT",
+                    "fetchMode": "NORMAL",
+                    "description": "Оценка исполнения",
+                    "displayName": "Оценка исполнения",
+                    "dataConstraint": {
+                      "entity": "DataConstraintDescriptor",
+                      "id": "@ice-e22d8f56-5e86-4ba1-ab14-57a6ac53dd04"
+                    }
+                  },
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-93db8e3b-962a-43e5-be13-79078ff7e28d",
+                    "name": "rateComment",
+                    "static": true,
+                    "fieldId": 101,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "Комментарий оценки",
+                    "displayName": "Комментарий оценки"
+                  }
+                ],
+                "dataType": "LIST",
+                "fetchMode": "NORMAL",
+                "tableName": "rehabEventExecIPRA",
+                "description": "Исполнение мероприятий реабилитации ИПРА",
+                "displayName": "Исполнение мероприятий реабилитации ИПРА",
+                "ownerOfList": "iPRAExecution",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-6d98d9be-ea61-4686-a433-f01bd0e7790d"
+                }
+              },
+              {
+                "entity": "DataFieldDescriptor",
+                "id": "@ice-5bde4b8a-026d-4535-a3b7-76bdbe519cfc",
+                "name": "nonExecReasonIPRA",
+                "static": true,
+                "fieldId": 102,
+                "children": [
+                  {
+                    "entity": "DataFieldDescriptor",
+                    "id": "@ice-d66ce922-c7c1-43e2-83b3-d228b6949bf9",
+                    "name": "dictRehabEventNonExecReasonCode",
+                    "static": true,
+                    "fieldId": 103,
+                    "children": [],
+                    "dataType": "STRING",
+                    "fetchMode": "NORMAL",
+                    "description": "[НСИ] Причины неисполнения мероприятий, предусмотренных ИПРА инвалида",
+                    "displayName": "[НСИ] Причины неисполнения мероприятий, предусмотренных ИПРА инвалида"
+                  }
+                ],
+                "dataType": "LIST",
+                "fetchMode": "NORMAL",
+                "tableName": "nonExecReasonIPRA",
+                "description": "Общие причины неисполнения",
+                "displayName": "Общие причины неисполнения",
+                "ownerOfList": "iPRAExecution",
+                "dataConstraint": {
+                  "entity": "DataConstraintDescriptor",
+                  "id": "@ice-7751301e-d08c-4cae-b932-836ea3f911b2"
+                }
+              }
+            ],
+            "dataType": "LIST",
+            "fetchMode": "NORMAL",
+            "tableName": "iPRAExecution",
+            "description": "Исполнение ИПРА",
+            "displayName": "Исполнение ИПРА",
+            "ownerOfList": "ipr",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-9f668d24-d475-497b-8470-39332e115eff"
+            }
+          }
+        ],
+        "displayName": {
+          "entity": "DisplayNameDescriptor",
+          "id": "@ice-d00d8bcd-bb7a-4c34-bbef-d8b157b93acf",
+          "displayFields": "iprNumber"
+        },
+        "dataFieldGroups": [],
+        "validationRules": [],
+        "greenplumReplicatedOption": true
+      },
+      "editForms": [],
+      "dataFields": [],
+      "reportTemplates": [],
+      "signedDataSetting": []
+    },
+    "parent": null,
+    "statemachine": null,
+    "module": {
+      "entity": "AppModule",
+      "id": "mse",
+      "isBackRef": true
+    },
+    "group": {
+      "entity": "AppObjectGroup",
+      "id": "mse.ipra",
+      "isBackRef": true
+    }
+  },
+  {
+    "entity": "AppObject",
+    "id": "mse.performer",
+    "version": 8,
+    "displayname": "Исполнитель",
+    "description": "Исполнитель",
+    "noinheritance": null,
+    "readonly": null,
+    "abstract": null,
+    "system": null,
+    "hideinmenu": null,
+    "temporal": null,
+    "type": "DICT",
+    "statemachinetype": null,
+    "descriptor": {
+      "entity": "DictDescriptor",
+      "id": "@ice-42b891a3-0d5f-456b-81a4-4b8550f4ea38",
+      "rules": [],
+      "actions": [],
+      "objects": [],
+      "editForm": {
+        "entity": "EditFormDescriptor",
+        "id": "@ice-d5af6f70-28f4-4e61-8149-970eaaa125f2",
+        "components": []
+      },
+      "listForm": {
+        "entity": "ListFormDescriptor",
+        "id": "@ice-dc9fa09c-bd1e-451b-bf42-24073cb5d965",
+        "filters": [],
+        "dataColumns": [],
+        "deleteCascadeEnable": false
+      },
+      "dataModel": {
+        "entity": "DataModelDescriptor",
+        "id": "@ice-af1a3b16-e732-444b-8910-788e6fc343cd",
+        "isView": false,
+        "counter": 17,
+        "triggers": [],
+        "tableName": "performer",
+        "dataFields": [
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-62671a21-9592-4d71-a82b-d93390751c68",
+            "name": "dictExecutorTypeCode",
+            "static": true,
+            "fieldId": 12,
+            "tooltip": "Тип исполнителя",
+            "children": [],
+            "dataType": "STRING",
+            "required": true,
+            "fetchMode": "NORMAL",
+            "description": "Тип исполнителя",
+            "displayName": "[МСЭ]dictExecutorTypeCode Тип исполнителя"
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-0f8cb66d-377f-427e-83d9-07a907152f60",
+            "name": "name",
+            "static": true,
+            "fieldId": 13,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "Исполнитель (организация или физ лицо)",
+            "displayName": "Название"
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-be9faf46-94dc-44a1-9fd8-d7df3ad0d85a",
+            "name": "shortName",
+            "static": true,
+            "fieldId": 14,
+            "tooltip": "Короткое наименование",
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "Короткое наименование",
+            "displayName": "Короткое наименование"
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-34bb88f7-bb1c-4973-aeb1-23d0c58e20a6",
+            "name": "fullName",
+            "static": true,
+            "fieldId": 15,
+            "tooltip": "Полное наименование",
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "Полное наименование",
+            "displayName": "Полное наименование"
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-afa28ba8-a570-4e3c-9932-19e2206b630b",
+            "name": "startDate",
+            "static": true,
+            "fieldId": 16,
+            "tooltip": "Дата начала действия",
+            "children": [],
+            "dataType": "DATE",
+            "fetchMode": "NORMAL",
+            "description": "Дата начала действия",
+            "displayName": "Дата начала действия",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-8505822a-cbbe-4e5d-9459-1f5ae3097317"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-42bc4d21-36ee-41e9-8f10-42b3b5093591",
+            "name": "endDate",
+            "static": true,
+            "fieldId": 17,
+            "tooltip": "Дата окончания действия",
+            "children": [],
+            "dataType": "DATE",
+            "fetchMode": "NORMAL",
+            "description": "Дата окончания действия",
+            "displayName": "Дата окончания действия",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-0437bbb2-cd01-4442-af02-b3057f4a9cca"
+            }
+          }
+        ],
+        "displayName": {
+          "entity": "DisplayNameDescriptor",
+          "id": "@ice-e211a089-3e70-4aa3-9ad0-30d0ac8defd5",
+          "displayFields": "name"
+        },
+        "validationRules": [],
+        "greenplumReplicatedOption": true
+      },
+      "editForms": [],
+      "reportTemplates": [],
+      "signedDataSetting": []
+    },
+    "parent": null,
+    "statemachine": null,
+    "module": {
+      "entity": "AppModule",
+      "id": "mse",
+      "isBackRef": true
+    },
+    "group": {
+      "entity": "AppObjectGroup",
+      "id": "mse.ipra",
+      "isBackRef": true
+    }
+  },
+  {
+    "entity": "AppObject",
+    "id": "mse.wheelchair",
+    "version": 7,
+    "displayname": "Дополнительные характеристики кресел-колясок",
+    "description": "Дополнительные характеристики кресел-колясок",
+    "noinheritance": null,
+    "readonly": null,
+    "abstract": null,
+    "system": null,
+    "hideinmenu": null,
+    "temporal": null,
+    "type": "DICT",
+    "statemachinetype": null,
+    "descriptor": {
+      "entity": "DictDescriptor",
+      "id": "@ice-59103dbf-ff10-47dc-972d-014684d102fe",
+      "rules": [],
+      "actions": [],
+      "objects": [],
+      "editForm": {
+        "entity": "EditFormDescriptor",
+        "id": "@ice-9ce59784-a2c2-431b-9c9c-51310807900a",
+        "components": []
+      },
+      "listForm": {
+        "entity": "ListFormDescriptor",
+        "id": "@ice-d3fe58a1-9292-4257-b7e9-bce5c52f938e",
+        "filters": [],
+        "cellStyles": [],
+        "dataColumns": [],
+        "deleteCascadeEnable": false
+      },
+      "dataModel": {
+        "entity": "DataModelDescriptor",
+        "id": "@ice-b7919436-e04e-435a-ae74-22cc7063f962",
+        "isView": false,
+        "counter": 27,
+        "triggers": [],
+        "tableName": "wheelchair",
+        "dataFields": [
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-5487b5b7-6c19-4941-8eee-48fd207a0d08",
+            "name": "wheelchairid",
+            "static": true,
+            "fieldId": 12,
+            "children": [],
+            "dataType": "LONG",
+            "required": true,
+            "fetchMode": "NORMAL",
+            "displayName": "ID записи дополнительной характеристики кресла-коляски",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-33c68008-5127-4de2-a583-dca36b2c7357"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-5c6c27dc-ea45-4780-9de7-b7c42a601133",
+            "name": "tsrid",
+            "static": true,
+            "fieldId": 13,
+            "children": [],
+            "dataType": "LONG",
+            "fetchMode": "NORMAL",
+            "description": "ID записи ТСР",
+            "displayName": "[МСЭ]ID записи ТСР",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-e8eb4777-5e3c-4501-a9dc-eec3a6606704"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-5e68da08-5f55-4e91-92ba-715bbe38f592",
+            "name": "WheelChairWidth",
+            "static": true,
+            "fieldId": 14,
+            "children": [],
+            "dataType": "INT",
+            "fetchMode": "NORMAL",
+            "description": "Харакеристика кресла-коляски (стула): ширина, см",
+            "displayName": "Харакеристика кресла-коляски (стула): ширина, см",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-af193814-e55f-4e79-a060-f381ec208ff2"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-d910f0bc-03a1-4ade-9612-55fda621ac95",
+            "name": "WheelChairDepth",
+            "static": true,
+            "fieldId": 15,
+            "children": [],
+            "dataType": "INT",
+            "fetchMode": "NORMAL",
+            "description": "Характеристика кресла-коляски (стула): глубина, см",
+            "displayName": "Характеристика кресла-коляски (стула): глубина, см",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-18dbc9b0-8ff1-47c0-bddc-11b8b35967f9"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-2f88d5b9-e1c6-422f-9555-f0221aff4c3a",
+            "name": "WheelChairSeatHeight",
+            "static": true,
+            "fieldId": 16,
+            "children": [],
+            "dataType": "INT",
+            "fetchMode": "NORMAL",
+            "description": "Характеристика кресла-коляски (стула): высота сиденья, см ",
+            "displayName": "Характеристика кресла-коляски (стула): высота сиденья, см",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-156c4a8d-4ce6-43c8-9996-229876f3433d"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-98c05a4f-1d23-4173-ae43-49bd084831d7",
+            "name": "WheelChairBackrestHeight",
+            "static": true,
+            "fieldId": 17,
+            "children": [],
+            "dataType": "INT",
+            "fetchMode": "NORMAL",
+            "description": "Характеристика кресла-коляски: высота спинки, см ",
+            "displayName": "Характеристика кресла-коляски: высота спинки, см",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-bcfa7b63-2394-4ee6-875a-772b89ecfecf"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-6c427b26-eb83-42a0-b9a1-86ef8c89a32b",
+            "name": "WheelChairArmrestHeight",
+            "static": true,
+            "fieldId": 18,
+            "children": [],
+            "dataType": "INT",
+            "fetchMode": "NORMAL",
+            "description": "Характеристика кресла-коляски: высота подклокотника, см ",
+            "displayName": "Характеристика кресла-коляски: высота подклокотника, см",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-753c74c8-79a9-4b71-87ba-36b35d616efe"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-25c122d0-eabe-4341-aca0-1d285d106826",
+            "name": "WheelChairFootBoardHeight",
+            "static": true,
+            "fieldId": 19,
+            "children": [],
+            "dataType": "INT",
+            "fetchMode": "NORMAL",
+            "description": "Характеристика кресла-коляски: высота подножки, см",
+            "displayName": "Характеристика кресла-коляски: высота подножки, см",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-b54555fa-3d8b-44ec-9f76-64f9b812ba2f"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-93264c30-e052-42ad-bffb-b283923f2d1b",
+            "name": "WheelChairHasBattery",
+            "static": true,
+            "fieldId": 20,
+            "children": [],
+            "dataType": "BOOLEAN",
+            "fetchMode": "NORMAL",
+            "description": "Характеристика кресла-коляски (7-04): наличие аккумулятора ",
+            "displayName": "Характеристика кресла-коляски (7-04): наличие аккумулятора",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-5473d48c-2091-4c5e-987c-89b32aff5bab"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-8932fb46-d03b-440b-9415-95719f8f3e5f",
+            "name": "bindid",
+            "static": true,
+            "fieldId": 21,
+            "children": [],
+            "dataType": "LONG",
+            "fetchMode": "NORMAL",
+            "description": "Связь междку Доп характрестиками к-к и Приспособлениями",
+            "displayName": "[МСЭ] ID связи",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-f02eac98-e4d7-4f16-8432-5ae25e5acbff"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-fbc85da0-c24e-463f-89a1-61439601eed4",
+            "name": "DictWheelChairFootBoardType",
+            "static": true,
+            "fieldId": 22,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ] Code вида подножки кресла-коляски",
+            "displayName": "[НСИ] Code вида подножки кресла-коляски",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-031e3c21-973a-45f5-b28c-f9c7ebd2ab93"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-d9515a2b-36df-4929-8ab5-c6f6de5bf26a",
+            "name": "DictWheelChairArmrestType",
+            "static": true,
+            "fieldId": 23,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ] Code Вид подклокотнка кресла-коляски",
+            "displayName": "[НСИ] Code Вид подклокотнка кресла-коляски",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-7fc57ac0-1f1f-45ba-869b-6f1cc53846da"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-454b639b-76c1-4f8a-9cc9-eadc554a0751",
+            "name": "DictWheelChairBackrestType",
+            "static": true,
+            "fieldId": 24,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ] Code вида спинки кресла-коляски",
+            "displayName": "[НСИ] Code вида спинки кресла-коляски",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-137b76ae-5302-4e7b-b1c1-3a4a8bf542ac"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-926a26e9-75f3-478e-bfd7-5b7c9c47b21d",
+            "name": "DictBearInclinationType",
+            "static": true,
+            "fieldId": 25,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ]Code положения наклона опоры",
+            "displayName": "[НСИ]Code положения наклона опоры",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-28b63a79-e90a-4ef1-b889-7907f7d21cd5"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-be0ca759-8788-436a-97fb-43330f94bc9f",
+            "name": "DictWheelChairSeatType",
+            "static": true,
+            "fieldId": 26,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ]Code Вид сиденья кресла-коляски",
+            "displayName": "[НСИ]Code Вид сиденья кресла-коляски",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-52ea17e7-8915-4e88-b587-85ec35e915c3"
+            }
+          },
+          {
+            "entity": "DataFieldDescriptor",
+            "id": "@ice-d3e32c3e-48cd-4790-9d92-dd9f16f2fee5",
+            "name": "DictTsrDriveType",
+            "static": true,
+            "fieldId": 27,
+            "children": [],
+            "dataType": "STRING",
+            "fetchMode": "NORMAL",
+            "description": "[НСИ]Code Тип электропривода (ID)",
+            "displayName": "[НСИ]Code Тип электропривода (ID)",
+            "dataConstraint": {
+              "entity": "DataConstraintDescriptor",
+              "id": "@ice-d7721ec4-364e-4dbf-b169-001f4b1e6654"
+            }
+          }
+        ],
+        "displayName": {
+          "entity": "DisplayNameDescriptor",
+          "id": "@ice-3779d1fb-d1f4-4907-b062-7a5071e82c21",
+          "displayFields": "wheelchairid"
+        },
+        "dataFieldGroups": [],
+        "validationRules": [],
+        "greenplumReplicatedOption": true
+      },
+      "editForms": [],
+      "dataFields": [],
+      "reportTemplates": [],
+      "signedDataSetting": []
+    },
+    "parent": null,
+    "statemachine": null,
+    "module": {
+      "entity": "AppModule",
+      "id": "mse",
+      "isBackRef": true
+    },
+    "group": {
+      "entity": "AppObjectGroup",
+      "id": "mse.ipra",
+      "isBackRef": true
+    }
+  }
+]
