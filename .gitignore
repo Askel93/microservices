@@ -7,3 +7,10 @@
 /fraud/target/
 /notification/target/
 /.idea/
+/apigw/apigw.iml
+/clients/clients.iml
+/customer/customer.iml
+/eureka-server/eureka-server.iml
+/fraud/fraud.iml
+/notification/notification.iml
+/amqp/amqp.iml
