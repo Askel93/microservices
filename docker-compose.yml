@@ -35,12 +35,16 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+      - spring
 
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
     ports:
       - 9411:9411
+    networks:
+      - spring
 
   eureka-server:
     image: askel93/eureka-server:latest
